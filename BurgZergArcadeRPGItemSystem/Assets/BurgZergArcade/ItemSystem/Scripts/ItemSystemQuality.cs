@@ -1,43 +1,47 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class ItemSystemQuality : IItemSystemQuality {
-
-	[SerializeField]private string _name; //he uses _ to denote a private variable
-	[SerializeField]private Sprite _icon;
+namespace BurgZergArcade.ItemSystem
+{
+	[System.Serializable]
+	public class ItemSystemQuality : IItemSystemQuality {
 	
-	ItemSystemQuality ()
-	{
-		_name = "Common";
-		_icon = new Sprite();
-	}
-	
-	public string Name 
-	{
-		get 
+		[SerializeField]private string _name; //he uses _ to denote a private variable
+		[SerializeField]private Sprite _icon;
+		
+		ItemSystemQuality ()
 		{
-			return _name;
-			//throw new System.NotImplementedException ();
+			_name = "Common";
+			_icon = new Sprite();
 		}
 		
-		set 
+		public string Name 
 		{
-			_name = value;
-			//throw new System.NotImplementedException ();
+			get 
+			{
+				return _name;
+				//throw new System.NotImplementedException ();
+			}
+			
+			set 
+			{
+				_name = value;
+				//throw new System.NotImplementedException ();
+			}
 		}
+	
+		public Sprite Icon 
+		{
+			get 
+			{
+				return _icon;
+				//throw new System.NotImplementedException ();
+			}
+			set 
+			{
+				_icon = value;
+				//throw new System.NotImplementedException ();
+			}
+		}	
 	}
-
-	public Sprite Icon 
-	{
-		get 
-		{
-			return _icon;
-			//throw new System.NotImplementedException ();
-		}
-		set 
-		{
-			_icon = value;
-			//throw new System.NotImplementedException ();
-		}
-	}	
 }
