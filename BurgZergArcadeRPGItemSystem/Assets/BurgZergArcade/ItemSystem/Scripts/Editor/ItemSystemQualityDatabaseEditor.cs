@@ -85,7 +85,8 @@ namespace BurgZergArcade.ItemSystem.Editor
 					return;
 				}
 				
-				qualityDatabase.database.Add(selectedItem);
+				qualityDatabase.Add(selectedItem); //new with it private
+				//qualityDatabase.database.Add(selectedItem); //old code with the databsae public
 				
 				selectedItem = new ItemSystemQuality();
 			}
