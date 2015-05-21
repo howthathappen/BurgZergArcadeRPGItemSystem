@@ -9,7 +9,7 @@ namespace BurgZergArcade.ItemSystem
 		[SerializeField]private string _name; //he uses _ to denote a private variable
 		[SerializeField]private Sprite _icon;
 		
-		ItemSystemQuality ()
+		public ItemSystemQuality ()
 		{
 			_name = "Common";
 			_icon = new Sprite();
