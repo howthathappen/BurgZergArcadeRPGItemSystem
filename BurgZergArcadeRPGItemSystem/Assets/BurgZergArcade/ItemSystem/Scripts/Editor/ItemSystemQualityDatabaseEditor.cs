@@ -4,11 +4,13 @@ using System.Collections;
 
 namespace BurgZergArcade.ItemSystem.Editor
 {
-	public class ItemSystemQualityDatabaseEditor : EditorWindow 
+	public partial class ItemSystemQualityDatabaseEditor : EditorWindow 
 	{
 		private ItemSystemQualityDatabase qualityDatabase;
 		private ItemSystemQuality selectedItem;
 		private Texture2D selectedTexture;
+		private int selectedIndex = -1;
+		private Vector2 _scrollPosition; //scroll position for the listview script
 		
 		private const int SPRITE_BUTTON_SIZE = 92;
 		private const string DATABASE_FILE_NAME = @"bzaQualityDatabase.asset";
@@ -48,7 +50,9 @@ namespace BurgZergArcade.ItemSystem.Editor
 		private void OnGUI ()
 		{
 			//GUILayout.Label("label"); //just a test
-			AddQualityToDatabase();
+			
+			ListView();
+			//AddQualityToDatabase();
 		}
 		
 		private void AddQualityToDatabase ()
@@ -81,6 +85,11 @@ namespace BurgZergArcade.ItemSystem.Editor
 			if(GUILayout.Button("Save"))
 			{
 				if(selectedItem == null)
+				{
+					return;
+				}
+				
+				if(selectedItem.Name == "")
 				{
 					return;
 				}
