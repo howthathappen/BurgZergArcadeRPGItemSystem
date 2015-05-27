@@ -12,5 +12,7 @@ MonoBehaviour:
   m_Name: bzaQualityDatabase
   m_EditorClassIdentifier: 
   database:
-  - _name: Commonzzzzz
-    _icon: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
+  - _name: Common
+    _icon: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  - _name: test
+    _icon: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}

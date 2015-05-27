@@ -53,6 +53,22 @@ namespace BurgZergArcade.ItemSystem.Editor
 			
 			ListView();
 			//AddQualityToDatabase();
+			
+			GUILayout.BeginHorizontal("Box", GUILayout.ExpandWidth(true));
+			BottomBar();
+			GUILayout.EndHorizontal();
+		}
+		
+		private void BottomBar ()
+		{
+			//count
+			GUILayout.Label("Qualities " + qualityDatabase.Count);
+			
+			//addbutton
+			if(GUILayout.Button("Add"))
+			{
+				qualityDatabase.Add(new ItemSystemQuality());
+			}
 		}
 		
 		private void AddQualityToDatabase ()

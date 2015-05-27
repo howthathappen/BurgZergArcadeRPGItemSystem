@@ -8,7 +8,7 @@ namespace BurgZergArcade.ItemSystem
 {
 	public class ItemSystemQualityDatabase : ScriptableObject
 	{
-		//[SerializeField] //show our database list in the inspector or not
+		[SerializeField][HideInInspector] //show our database list in the inspector or not. Also allows the database to be saved after closing unity it seems
 		List<ItemSystemQuality> database = new List<ItemSystemQuality>();
 	
 		public void Add (ItemSystemQuality item)
