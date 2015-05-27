@@ -8,7 +8,7 @@ namespace BurgZergArcade.ItemSystem
 {
 	public class ItemSystemQualityDatabase : ScriptableObject
 	{
-		[SerializeField]
+		//[SerializeField] //show our database list in the inspector or not
 		List<ItemSystemQuality> database = new List<ItemSystemQuality>();
 	
 		public void Add (ItemSystemQuality item)

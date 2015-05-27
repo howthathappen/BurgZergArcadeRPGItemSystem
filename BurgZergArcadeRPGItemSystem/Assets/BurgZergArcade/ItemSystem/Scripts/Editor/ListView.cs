@@ -19,6 +19,7 @@ namespace BurgZergArcade.ItemSystem.Editor
 		{
 			for(int cnt = 0; cnt < qualityDatabase.Count; cnt++)
 			{
+				GUILayout.BeginHorizontal("Box");
 				//sprite
 				if(qualityDatabase.Get(cnt).Icon)
 				{
@@ -48,10 +49,25 @@ namespace BurgZergArcade.ItemSystem.Editor
 					Repaint();
 				}
 				
+				GUILayout.BeginVertical();
 				//name
 				qualityDatabase.Get(cnt).Name = GUILayout.TextField(qualityDatabase.Get(cnt).Name); //display qualityDatabase.Get(cnt).Name in a text field, but also assign the value of that text field back to the variable Name
+				
 				//delete button
-				GUILayout.Button("x");
+				if(GUILayout.Button("x", GUILayout.Width(30), GUILayout.Height(25)))
+				{
+					if(EditorUtility.DisplayDialog("Delete Quality", 
+													"Are you sure you want to delete " + qualityDatabase.Get(cnt).Name + " from the database?", 
+													"Delete", 
+													"Cancel"))
+					{
+						qualityDatabase.Remove(cnt);
+					}
+				}
+				
+				GUILayout.EndVertical();
+				
+				GUILayout.EndHorizontal();
 			}
 		}
 	}
