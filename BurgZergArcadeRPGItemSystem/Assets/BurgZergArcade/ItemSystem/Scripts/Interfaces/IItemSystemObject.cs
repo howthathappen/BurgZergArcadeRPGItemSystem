@@ -10,11 +10,11 @@ namespace BurgZergArcade.ItemSystem
 		//icon
 		//burden
 		//qualityLevel
-		string ISName {get; set;}
-		int ISValue {get; set;}
-		Sprite ISIcon {get; set;}
-		int ISBurden {get; set;}
-		ItemSystemQuality ItemSystemQuality {get; set;}
+		string Name {get; set;}
+		int Value {get; set;}
+		Sprite Icon {get; set;}
+		int Burden {get; set;}
+		ItemSystemQuality Quality {get; set;}
 		
 		//these go to other item interfaces
 		//equip

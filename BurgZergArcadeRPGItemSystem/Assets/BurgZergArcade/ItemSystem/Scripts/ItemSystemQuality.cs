@@ -15,6 +15,12 @@ namespace BurgZergArcade.ItemSystem
 			_icon = new Sprite();
 		}
 		
+		public ItemSystemQuality (string name, Sprite icon)
+		{
+			_name = name;
+			_icon = icon;
+		}
+		
 		public string Name 
 		{
 			get 
