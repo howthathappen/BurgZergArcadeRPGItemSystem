@@ -3,6 +3,7 @@ using System.Collections;
 
 namespace BurgZergArcade.ItemSystem
 {
+	[System.Serializable]
 	public class ItemSystemObject : IItemSystemObject {
 	
 		[SerializeField]private Sprite _icon;

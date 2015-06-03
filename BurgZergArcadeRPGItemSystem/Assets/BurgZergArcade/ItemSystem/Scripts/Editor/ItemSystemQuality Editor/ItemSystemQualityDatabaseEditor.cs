@@ -13,9 +13,9 @@ namespace BurgZergArcade.ItemSystem.Editor
 		private Vector2 _scrollPosition; //scroll position for the listview script
 		
 		private const int SPRITE_BUTTON_SIZE = 92;
-		private const string DATABASE_FILE_NAME = @"bzaQualityDatabase.asset";
-		private const string DATABASE_FOLDER_NAME = @"Database";
-		private const string DATABASE_FULL_PATH = @"Assets/" + DATABASE_FOLDER_NAME + "/" + DATABASE_FILE_NAME; //originally @"Assets/Database/bzaQualityDatabase.asset";
+		private const string DATABASE_NAME = @"bzaQualityDatabase.asset";
+		private const string DATABASE_PATH = @"Database";
+		private const string DATABASE_FULL_PATH = @"Assets/" + DATABASE_PATH + "/" + DATABASE_NAME; //originally @"Assets/Database/bzaQualityDatabase.asset";
 	
 		[MenuItem("BZA/Database/Quality Editor %#i")] //makes the hotkey ctrl+shift+i. Look up unity menuitem for more hotkey combinations.
 		//this function is called when the key combination is pressed
@@ -29,26 +29,34 @@ namespace BurgZergArcade.ItemSystem.Editor
 		
 		private void OnEnable ()
 		{
-			qualityDatabase = AssetDatabase.LoadAssetAtPath(DATABASE_FULL_PATH, typeof(ItemSystemQualityDatabase)) as ItemSystemQualityDatabase; //load the database
-			
-			if(qualityDatabase == null) //check to see if we actually loaded the database
-			{
-				if(!AssetDatabase.IsValidFolder("Assets/" + DATABASE_FOLDER_NAME)) //if the folder isn't created
-				{
-					AssetDatabase.CreateFolder("Assets", DATABASE_FOLDER_NAME); //create the folder
-				}
-				
-				qualityDatabase = ScriptableObject.CreateInstance<ItemSystemQualityDatabase>();
-				AssetDatabase.CreateAsset(qualityDatabase, DATABASE_FULL_PATH); //AssetDatabase will not work at runtime.
-				AssetDatabase.SaveAssets();
-				AssetDatabase.Refresh();
-			}
-			
-			selectedItem = new ItemSystemQuality();
+			qualityDatabase = ScriptableObject.CreateInstance<ItemSystemQualityDatabase>();
+			qualityDatabase = qualityDatabase.GetDatabase<ItemSystemQualityDatabase>(DATABASE_PATH, DATABASE_NAME);
+			//removed episode 9. Was the only code here at the time.
+//			qualityDatabase = AssetDatabase.LoadAssetAtPath(DATABASE_FULL_PATH, typeof(ItemSystemQualityDatabase)) as ItemSystemQualityDatabase; //load the database
+//			
+//			if(qualityDatabase == null) //check to see if we actually loaded the database
+//			{
+//				if(!AssetDatabase.IsValidFolder("Assets/" + DATABASE_FOLDER_NAME)) //if the folder isn't created
+//				{
+//					AssetDatabase.CreateFolder("Assets", DATABASE_FOLDER_NAME); //create the folder
+//				}
+//				
+//				qualityDatabase = ScriptableObject.CreateInstance<ItemSystemQualityDatabase>();
+//				AssetDatabase.CreateAsset(qualityDatabase, DATABASE_FULL_PATH); //AssetDatabase will not work at runtime.
+//				AssetDatabase.SaveAssets();
+//				AssetDatabase.Refresh();
+//			}
+//			
+//			selectedItem = new ItemSystemQuality();
 		}
 		
 		private void OnGUI ()
 		{
+			if(qualityDatabase == null)
+			{
+				Debug.LogWarning("qualityDatabase not loaded");
+				return;
+			}
 			//GUILayout.Label("label"); //just a test
 			
 			ListView();

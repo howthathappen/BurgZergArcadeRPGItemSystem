@@ -16,3 +16,5 @@ MonoBehaviour:
     _icon: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
   - _name: test
     _icon: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  - _name: 3
+    _icon: {fileID: 0}
