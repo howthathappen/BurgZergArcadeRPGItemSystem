@@ -17,7 +17,7 @@ namespace BurgZergArcade.ItemSystem.Editor
 		private const string DATABASE_PATH = @"Database";
 		private const string DATABASE_FULL_PATH = @"Assets/" + DATABASE_PATH + "/" + DATABASE_NAME; //originally @"Assets/Database/bzaQualityDatabase.asset";
 	
-		[MenuItem("BZA/Database/Quality Editor %#i")] //makes the hotkey ctrl+shift+i. Look up unity menuitem for more hotkey combinations.
+		[MenuItem("BZA/Database/Quality Editor %#w")] //makes the hotkey ctrl+shift+i. Look up unity menuitem for more hotkey combinations.
 		//this function is called when the key combination is pressed
 		public static void Init () //must be static for whatever reason
 		{
