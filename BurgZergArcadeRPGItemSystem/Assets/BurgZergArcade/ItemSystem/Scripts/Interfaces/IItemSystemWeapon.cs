@@ -3,8 +3,9 @@ using System.Collections;
 
 namespace BurgZergArcade.ItemSystem
 {
-	public interface IItemSystemGameObject
+	public interface IItemSystemWeapon
 	{
-		GameObject Prefab {get;}
+		int minDamage {get; set;}
+		int Attack();
 	}
 }
