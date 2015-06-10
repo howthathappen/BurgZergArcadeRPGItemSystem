@@ -29,8 +29,11 @@ namespace BurgZergArcade.ItemSystem.Editor
 		
 		private void OnEnable ()
 		{
-			qualityDatabase = ScriptableObject.CreateInstance<ItemSystemQualityDatabase>();
-			qualityDatabase = qualityDatabase.GetDatabase<ItemSystemQualityDatabase>(DATABASE_PATH, DATABASE_NAME);
+			//qualityDatabase = ScriptableObject.CreateInstance<ItemSystemQualityDatabase>(); //removed episode 11.
+			if(qualityDatabase == null)
+			{
+				qualityDatabase = ItemSystemQualityDatabase.GetDatabase<ItemSystemQualityDatabase>(DATABASE_PATH, DATABASE_NAME);
+			}
 			//removed episode 9. Was the only code here at the time.
 //			qualityDatabase = AssetDatabase.LoadAssetAtPath(DATABASE_FULL_PATH, typeof(ItemSystemQualityDatabase)) as ItemSystemQualityDatabase; //load the database
 //			

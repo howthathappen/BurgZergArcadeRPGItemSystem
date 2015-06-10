@@ -50,7 +50,7 @@ namespace BurgZergArcade
 			EditorUtility.SetDirty(this);
 		}
 		
-		public U GetDatabase<U>(string dbPath, string dbName) where U: ScriptableObject //can only pass in a ScriptableObject
+		public static U GetDatabase<U>(string dbPath, string dbName) where U: ScriptableObject //can only pass in a ScriptableObject
 		{
 			string dbFullPath = @"Assets/" + dbPath + "/" + dbName;
 			
