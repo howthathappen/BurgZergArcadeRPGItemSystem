@@ -11,7 +11,7 @@ namespace BurgZergArcade.ItemSystem.Editor
 		private void ItemDetails ()
 		{
 			GUILayout.BeginVertical("Box", GUILayout.ExpandWidth(true), GUILayout.ExpandHeight(true));
-			GUILayout.BeginHorizontal(GUILayout.ExpandWidth(true), GUILayout.ExpandHeight(true));
+			GUILayout.BeginVertical(GUILayout.ExpandWidth(true), GUILayout.ExpandHeight(true));
 			//GUILayout.Label("Detail View");
 			
 			if(showNewWeaponDetails)
@@ -28,7 +28,7 @@ namespace BurgZergArcade.ItemSystem.Editor
 //				}
 //			}
 			
-			GUILayout.EndHorizontal();
+			GUILayout.EndVertical();
 			
 			GUILayout.Space(50);
 			GUILayout.BeginHorizontal(GUILayout.ExpandWidth(true));

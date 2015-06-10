@@ -111,9 +111,29 @@ namespace BurgZergArcade.ItemSystem
 			}
 		}
 		
-		public void OnGUI ()
+		//this code will go into a new script later
+		
+		public override void OnGUI ()//this OnGUI method overrides whatever OnGUI method we have in the base class
 		{
-			Name = EditorGUILayout.TextField("Name: ", Name);
+			//Name = EditorGUILayout.TextField("Name: ", Name);
+			base.OnGUI();
+			
+			_minDamage = System.Convert.ToInt32(EditorGUILayout.TextField("Damage", _minDamage.ToString()));
+			_durability = System.Convert.ToInt32(EditorGUILayout.TextField("Durability", _durability.ToString()));
+			_maxDurability = System.Convert.ToInt32(EditorGUILayout.TextField("Max Durability", _maxDurability.ToString()));
+			
+			DisplayEquipmentSlot();
+			DisplayPrefab();
+		}
+		
+		public void DisplayEquipmentSlot ()
+		{
+			GUILayout.Label("Equipment Slot");
+		}
+		
+		public void DisplayPrefab ()
+		{
+			GUILayout.Label("Prefab");
 		}
 	}
 }
