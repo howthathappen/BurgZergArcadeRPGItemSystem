@@ -7,8 +7,8 @@ namespace BurgZergArcade.ItemSystem
 	[System.Serializable]
 	public class ItemSystemObject : IItemSystemObject {
 	
-		[SerializeField]private Sprite _icon;
 		[SerializeField]private string _name;
+		[SerializeField]private Sprite _icon;
 		[SerializeField]private int _value;
 		[SerializeField]private int _burden;
 		[SerializeField]private ItemSystemQuality _quality;
@@ -74,6 +74,9 @@ namespace BurgZergArcade.ItemSystem
 		}
 		
 		//this code will be placed in a new class later on.
+		private ItemSystemQualityDatabase qdb;
+		private int qualitySelectedIndex = 0;
+		private string[] options;// = new string[] {"com", "unc", "rar"};
 		
 		public virtual void OnGUI ()
 		{
@@ -91,9 +94,29 @@ namespace BurgZergArcade.ItemSystem
 			GUILayout.Label("Icon");
 		}
 		
+		public int SelectedQualityID
+		{
+			get {return qualitySelectedIndex;}
+		}
+		
+		public ItemSystemObject ()
+		{
+			string DATABASE_NAME = @"bzaQualityDatabase.asset";
+			string DATABASE_PATH = @"Database";
+			qdb = ItemSystemQualityDatabase.GetDatabase<ItemSystemQualityDatabase>(DATABASE_PATH, DATABASE_NAME);
+		
+			options = new string[qdb.Count];
+			for(int cnt = 0; cnt < qdb.Count; cnt++)
+			{
+				options[cnt] = qdb.Get(cnt).Name;
+			}
+		}
+		
 		public void DisplayQuality ()
 		{
-			GUILayout.Label("Quality");
+			//GUILayout.Label("Quality");
+			qualitySelectedIndex = EditorGUILayout.Popup("Quality", qualitySelectedIndex, options);
+			_quality = qdb.Get(SelectedQualityID);
 		}
 	}
 }

@@ -54,6 +54,11 @@ namespace BurgZergArcade
 		{
 			string dbFullPath = @"Assets/" + dbPath + "/" + dbName;
 			
+			//Recursive Serialization is not supported.
+			//The error was related to loading assets in a constructor/static constructor. 
+			//That was never allowed but somehow was working until now. Unfortunately I don't know the 
+			//details of implementation of the serialiser. The fix was ws simply about moving loading the 
+			//assets to Awake
 			U db = AssetDatabase.LoadAssetAtPath(dbFullPath, typeof(U)) as U; //load the database
 			
 			if(db == null) //check to see if we actually loaded the database

@@ -11,4 +11,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d94f876f8c4e914a8544833e4237f87, type: 3}
   m_Name: bzaWeaponDatabase
   m_EditorClassIdentifier: 
-  database: []
+  database:
+  - _name: Knife
+    _icon: {fileID: 0}
+    _value: 1
+    _burden: 2
+    _quality:
+      _name: 
+      _icon: {fileID: 0}
+    _minDamage: 3
+    _durability: 4
+    _maxDurability: 5
+    _prefab: {fileID: 0}
+  - _name: 
+    _icon: {fileID: 0}
+    _value: 0
+    _burden: 0
+    _quality:
+      _name: uncommon
+      _icon: {fileID: 0}
+    _minDamage: 0
+    _durability: 0
+    _maxDurability: 0
+    _prefab: {fileID: 0}
+  - _name: rare
+    _icon: {fileID: 0}
+    _value: 0
+    _burden: 0
+    _quality:
+      _name: rare
+      _icon: {fileID: 0}
+    _minDamage: 0
+    _durability: 0
+    _maxDurability: 0
+    _prefab: {fileID: 0}

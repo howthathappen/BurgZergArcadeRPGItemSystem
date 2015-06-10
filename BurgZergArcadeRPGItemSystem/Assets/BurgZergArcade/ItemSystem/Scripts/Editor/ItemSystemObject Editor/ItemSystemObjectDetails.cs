@@ -58,6 +58,15 @@ namespace BurgZergArcade.ItemSystem.Editor
 				if(GUILayout.Button("Save"))
 				{
 					showNewWeaponDetails = false;
+					
+//					string DATABASE_NAME = @"bzaQualityDatabase.asset";
+//					string DATABASE_PATH = @"Database";
+//					ItemSystemQualityDatabase qdb;
+//					qdb = ItemSystemQualityDatabase.GetDatabase<ItemSystemQualityDatabase>(DATABASE_PATH, DATABASE_NAME);
+//					
+//					tempWeapon.Quality = qdb.Get(tempWeapon.SelectedQualityID);
+					
+					database.Add(tempWeapon);
 					tempWeapon = null;
 				}
 				
