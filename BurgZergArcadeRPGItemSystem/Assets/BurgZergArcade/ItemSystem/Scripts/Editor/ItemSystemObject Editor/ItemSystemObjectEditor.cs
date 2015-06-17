@@ -19,9 +19,8 @@ namespace BurgZergArcade.ItemSystem.Editor
 		{
 			ItemSystemObjectEditor window = EditorWindow.GetWindow<ItemSystemObjectEditor>();
 			window.minSize = new Vector2(800f, 600f);
-			window.title = "Item System";
-			//titleContent.text = ("Item System");
-			//window.titleContent = titleContent;
+			//window.titleContent.text = "Item System";//window.title = "Item System";
+			window.titleContent = new GUIContent("Item System"); //this line and the two examples above give the same results
 			window.Show();
 		}
 		

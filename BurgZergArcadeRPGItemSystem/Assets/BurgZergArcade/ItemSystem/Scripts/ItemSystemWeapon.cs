@@ -5,13 +5,15 @@ using UnityEditor;
 namespace BurgZergArcade.ItemSystem
 {
 	[System.Serializable]
-	public class ItemSystemWeapon : ItemSystemObject, IItemSystemWeapon, IItemSystemDestructable, IItemSystemEquipable, IItemSystemGameObject //inherits the class ItemSystemObject and many other interfaces
+	public class ItemSystemWeapon : ItemSystemObject, IItemSystemWeapon, IItemSystemDestructable, IItemSystemGameObject //inherits the class ItemSystemObject and many other interfaces
 	{
 		[SerializeField] private int _minDamage;
 		[SerializeField] private int _durability;
 		[SerializeField] private int _maxDurability;
 		[SerializeField] private ItemSystemEquipmentSlot _equipmentSlot;
 		[SerializeField] private GameObject _prefab;
+		
+		public EquipmentSlot equipmentSlot;
 		
 		public ItemSystemWeapon () //constructor
 		{
@@ -89,10 +91,10 @@ namespace BurgZergArcade.ItemSystem
 		}
 
 		//IItemSystemEquipable
-		public bool Equip () //we don't want our items equiping themselves, so instead, we will probably have another system handle the equiping of items.
-		{
-			throw new System.NotImplementedException ();
-		}
+//		public bool Equip () //we don't want our items equiping themselves, so instead, we will probably have another system handle the equiping of items.
+//		{
+//			throw new System.NotImplementedException ();
+//		}
 
 		public ItemSystemEquipmentSlot EquipmentSlot 
 		{
@@ -128,7 +130,8 @@ namespace BurgZergArcade.ItemSystem
 		
 		public void DisplayEquipmentSlot ()
 		{
-			GUILayout.Label("Equipment Slot");
+			equipmentSlot = (EquipmentSlot) EditorGUILayout.EnumPopup("Equipment Slot", equipmentSlot);
+			//GUILayout.Label("Equipment Slot");
 		}
 		
 		public void DisplayPrefab ()

@@ -23,7 +23,7 @@ namespace BurgZergArcade.ItemSystem.Editor
 		{
 			ItemSystemQualityDatabaseEditor window = EditorWindow.GetWindow<ItemSystemQualityDatabaseEditor>();
 			window.minSize = new Vector2(400f, 300f);
-			window.title = "Quality Database";
+			window.titleContent.text = "Quality Database";//window.title = "Quality Database";
 			window.Show();
 		}
 		
