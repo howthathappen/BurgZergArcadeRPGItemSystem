@@ -12,36 +12,14 @@ MonoBehaviour:
   m_Name: bzaWeaponDatabase
   m_EditorClassIdentifier: 
   database:
-  - _name: Knife
+  - _name: Shortsword
     _icon: {fileID: 0}
     _value: 1
     _burden: 2
     _quality:
-      _name: 
+      _name: uncommon
       _icon: {fileID: 0}
     _minDamage: 3
     _durability: 4
     _maxDurability: 5
-    _prefab: {fileID: 0}
-  - _name: 
-    _icon: {fileID: 0}
-    _value: 0
-    _burden: 0
-    _quality:
-      _name: uncommon
-      _icon: {fileID: 0}
-    _minDamage: 0
-    _durability: 0
-    _maxDurability: 0
-    _prefab: {fileID: 0}
-  - _name: rare
-    _icon: {fileID: 0}
-    _value: 0
-    _burden: 0
-    _quality:
-      _name: rare
-      _icon: {fileID: 0}
-    _minDamage: 0
-    _durability: 0
-    _maxDurability: 0
-    _prefab: {fileID: 0}
+    _prefab: {fileID: 130818, guid: 6d85cb865e948e344bca3373caec9bde, type: 2}
