@@ -11,6 +11,8 @@ namespace BurgZergArcade.ItemSystem.Editor
 		private int _listViewButtonWidth = 190;
 		private int _listViewButtonHeight = 25;
 		
+		private int _selectedIndex = -1; //if the selected index is -1, we know the item is a new item that we are adding. 0 or greater is a current item that is being edited.
+		
 		private void ListView ()
 		{
 			_scrollPosition = GUILayout.BeginScrollView(_scrollPosition, "Box", GUILayout.ExpandHeight(true), GUILayout.Width(_listViewWidth)); //width in pixels
@@ -18,8 +20,14 @@ namespace BurgZergArcade.ItemSystem.Editor
 			
 			for(int cnt = 0; cnt < database.Count; cnt++)
 			{
-				GUILayout.Button(database.Get(cnt).Name, "box", GUILayout.Width(_listViewButtonWidth), GUILayout.Height(_listViewButtonHeight));
-				//EditorGUILayout.LabelField(database.Get(cnt).Name);
+				if(GUILayout.Button(database.Get(cnt).Name, "box", GUILayout.Width(_listViewButtonWidth), GUILayout.Height(_listViewButtonHeight)))
+				{
+					//Debug.Log(database.Get(cnt).Name + " : " + cnt);
+					_selectedIndex = cnt;
+					tempWeapon = database.Get(cnt);
+					showNewWeaponDetails = true;
+					state = DisplayState.DETAILS;
+				}
 			}
 			
 			GUILayout.EndScrollView();

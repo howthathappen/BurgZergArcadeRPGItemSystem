@@ -17,8 +17,8 @@ MonoBehaviour:
     _value: 1
     _burden: 2
     _quality:
-      _name: uncommon
-      _icon: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
+      _name: 1
+      _icon: {fileID: 0}
     _minDamage: 3
     _durability: 4
     _maxDurability: 5
@@ -29,7 +29,7 @@ MonoBehaviour:
     _value: 0
     _burden: 0
     _quality:
-      _name: kj
+      _name: 1
       _icon: {fileID: 0}
     _minDamage: 0
     _durability: 0
@@ -41,7 +41,43 @@ MonoBehaviour:
     _value: 0
     _burden: 0
     _quality:
-      _name: rhjkjyt
+      _name: 1
+      _icon: {fileID: 0}
+    _minDamage: 0
+    _durability: 0
+    _maxDurability: 0
+    _prefab: {fileID: 0}
+    equipmentSlot: 0
+  - _name: LongSword
+    _icon: {fileID: 0}
+    _value: 0
+    _burden: 0
+    _quality:
+      _name: 1
+      _icon: {fileID: 0}
+    _minDamage: 0
+    _durability: 0
+    _maxDurability: 0
+    _prefab: {fileID: 0}
+    equipmentSlot: 0
+  - _name: club
+    _icon: {fileID: 0}
+    _value: 0
+    _burden: 0
+    _quality:
+      _name: 1
+      _icon: {fileID: 0}
+    _minDamage: 0
+    _durability: 0
+    _maxDurability: 0
+    _prefab: {fileID: 0}
+    equipmentSlot: 0
+  - _name: sword3
+    _icon: {fileID: 0}
+    _value: 0
+    _burden: 0
+    _quality:
+      _name: 1
       _icon: {fileID: 0}
     _minDamage: 0
     _durability: 0

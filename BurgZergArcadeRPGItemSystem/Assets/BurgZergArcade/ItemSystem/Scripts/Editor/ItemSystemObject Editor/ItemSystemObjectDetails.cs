@@ -1,12 +1,20 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEditor;
 
 namespace BurgZergArcade.ItemSystem.Editor
 {
 	public partial class ItemSystemObjectEditor
 	{
+		private enum DisplayState{
+			NONE,
+			DETAILS
+		};
+	
 		private ItemSystemWeapon tempWeapon = new ItemSystemWeapon();
 		private bool showNewWeaponDetails = false;
+		
+		private DisplayState state = DisplayState.NONE;
 		
 		private void ItemDetails ()
 		{
@@ -14,10 +22,23 @@ namespace BurgZergArcade.ItemSystem.Editor
 			GUILayout.BeginVertical(GUILayout.ExpandWidth(true), GUILayout.ExpandHeight(true));
 			//GUILayout.Label("Detail View");
 			
-			if(showNewWeaponDetails)
+			EditorGUILayout.LabelField("State: " + state);
+			switch(state)
 			{
-				DisplayNewWeapon();
+				case DisplayState.DETAILS:
+					if(showNewWeaponDetails)
+					{
+						DisplayNewWeapon();
+					}
+					break;
+				default:
+					break;
 			}
+			
+//			if(showNewWeaponDetails)
+//			{
+//				DisplayNewWeapon();
+//			}
 //			else
 //			{
 //				if(GUILayout.Button("Create Weapon"))
@@ -51,12 +72,21 @@ namespace BurgZergArcade.ItemSystem.Editor
 					//Debug.Log("Create New Weapon");
 					tempWeapon = new ItemSystemWeapon();
 					showNewWeaponDetails = true;
+					state = DisplayState.DETAILS;
 				}
 			}
 			else
 			{
 				if(GUILayout.Button("Save"))
 				{
+					if(_selectedIndex == -1)
+					{
+						database.Add(tempWeapon);
+					}
+					else
+					{
+						database.Replace(_selectedIndex, tempWeapon);
+					}
 					showNewWeaponDetails = false;
 					
 //					string DATABASE_NAME = @"bzaQualityDatabase.asset";
@@ -66,14 +96,18 @@ namespace BurgZergArcade.ItemSystem.Editor
 //					
 //					tempWeapon.Quality = qdb.Get(tempWeapon.SelectedQualityID);
 					
-					database.Add(tempWeapon);
+					//database.Add(tempWeapon);
 					tempWeapon = null;
+					_selectedIndex = -1;
+					state = DisplayState.NONE;
 				}
 				
 				if(GUILayout.Button("Cancel"))
 				{
 					showNewWeaponDetails = false;
 					tempWeapon = null;
+					_selectedIndex = -1;
+					state = DisplayState.NONE;
 				}
 			}
 		}
