@@ -13,13 +13,38 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   database:
   - _name: Shortsword
-    _icon: {fileID: 0}
+    _icon: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
     _value: 1
     _burden: 2
     _quality:
       _name: uncommon
-      _icon: {fileID: 0}
+      _icon: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
     _minDamage: 3
     _durability: 4
     _maxDurability: 5
     _prefab: {fileID: 130818, guid: 6d85cb865e948e344bca3373caec9bde, type: 2}
+    equipmentSlot: 0
+  - _name: poiy
+    _icon: {fileID: 0}
+    _value: 0
+    _burden: 0
+    _quality:
+      _name: kj
+      _icon: {fileID: 0}
+    _minDamage: 0
+    _durability: 0
+    _maxDurability: 0
+    _prefab: {fileID: 0}
+    equipmentSlot: 0
+  - _name: l
+    _icon: {fileID: 0}
+    _value: 0
+    _burden: 0
+    _quality:
+      _name: rhjkjyt
+      _icon: {fileID: 0}
+    _minDamage: 0
+    _durability: 0
+    _maxDurability: 0
+    _prefab: {fileID: 0}
+    equipmentSlot: 0

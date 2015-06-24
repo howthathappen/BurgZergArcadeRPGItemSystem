@@ -91,7 +91,7 @@ namespace BurgZergArcade.ItemSystem
 		
 		public void DisplayIcon ()
 		{
-			GUILayout.Label("Icon");
+			_icon = EditorGUILayout.ObjectField("Icon", _icon, typeof(Sprite), false) as Sprite;
 		}
 		
 		public int SelectedQualityID

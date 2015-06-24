@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Name: bzaQualityDatabase
   m_EditorClassIdentifier: 
   database:
-  - _name: common
+  - _name: rhjkjyt
     _icon: {fileID: 0}
-  - _name: uncommon
+  - _name: kj
     _icon: {fileID: 0}
-  - _name: rare
+  - _name: l
     _icon: {fileID: 0}
