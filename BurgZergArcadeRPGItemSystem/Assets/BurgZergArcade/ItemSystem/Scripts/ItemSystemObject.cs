@@ -20,6 +20,8 @@ namespace BurgZergArcade.ItemSystem
 		
 		public void Clone (ItemSystemObject item)
 		{
+			_name = item.Name;
+			_icon = item.Icon;
 			_value = item.Value;
 			_burden = item.Burden;
 			_quality = item.Quality;

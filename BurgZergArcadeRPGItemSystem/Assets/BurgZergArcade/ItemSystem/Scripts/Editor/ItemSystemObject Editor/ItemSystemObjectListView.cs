@@ -15,6 +15,11 @@ namespace BurgZergArcade.ItemSystem.Editor
 		
 		private void ListView ()
 		{
+			if(state != DisplayState.NONE) //makes our selection full screen essentially		
+			{
+				return;
+			}
+			
 			_scrollPosition = GUILayout.BeginScrollView(_scrollPosition, "Box", GUILayout.ExpandHeight(true), GUILayout.Width(_listViewWidth)); //width in pixels
 			//GUILayout.Label("List View");
 			

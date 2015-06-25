@@ -29,6 +29,7 @@ namespace BurgZergArcade.ItemSystem
 		public void Clone (ItemSystemWeapon weapon)
 		{
 			base.Clone(weapon); //calls the Clone function from the class this is derived from (the base class).
+			_minDamage = weapon.minDamage;
 			_durability = weapon.Durability;
 			_maxDurability = weapon.MaxDurability;
 			equipmentSlot = weapon.equipmentSlot;
