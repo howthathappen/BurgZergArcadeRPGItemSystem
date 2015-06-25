@@ -10,23 +10,29 @@ namespace BurgZergArcade.ItemSystem
 		[SerializeField] private int _minDamage;
 		[SerializeField] private int _durability;
 		[SerializeField] private int _maxDurability;
-		[SerializeField] private ItemSystemEquipmentSlot _equipmentSlot;
+		//[SerializeField] private ItemSystemEquipmentSlot _equipmentSlot;
 		[SerializeField] private GameObject _prefab;
 		
 		public EquipmentSlot equipmentSlot;
 		
 		public ItemSystemWeapon () //constructor
 		{
-			_equipmentSlot = new ItemSystemEquipmentSlot();
+			//_equipmentSlot = new ItemSystemEquipmentSlot();
 			//_prefab = new GameObject();
 		}
 		
-		public ItemSystemWeapon (int durability, int maxDurability, ItemSystemEquipmentSlot equipmentSlot, GameObject prefab)
+		public ItemSystemWeapon (ItemSystemWeapon weapon)//(int durability, int maxDurability, GameObject prefab)
 		{
-			_durability = durability;
-			_maxDurability = maxDurability;
-			_equipmentSlot = equipmentSlot;
-			_prefab = prefab;
+			Clone(weapon);
+		}
+		
+		public void Clone (ItemSystemWeapon weapon)
+		{
+			base.Clone(weapon); //calls the Clone function from the class this is derived from (the base class).
+			_durability = weapon.Durability;
+			_maxDurability = weapon.MaxDurability;
+			equipmentSlot = weapon.equipmentSlot;
+			_prefab = weapon.Prefab;
 		}
 		
 		//IItemSystemWeapon Implementation
@@ -95,14 +101,6 @@ namespace BurgZergArcade.ItemSystem
 //		{
 //			throw new System.NotImplementedException ();
 //		}
-
-		public ItemSystemEquipmentSlot EquipmentSlot 
-		{
-			get 
-			{
-				return _equipmentSlot;
-			}
-		}
 
 		//IItemSystemGameObject
 		public GameObject Prefab 

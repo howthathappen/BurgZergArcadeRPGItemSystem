@@ -24,7 +24,9 @@ namespace BurgZergArcade.ItemSystem.Editor
 				{
 					//Debug.Log(database.Get(cnt).Name + " : " + cnt);
 					_selectedIndex = cnt;
-					tempWeapon = database.Get(cnt);
+					tempWeapon = new ItemSystemWeapon(database.Get(cnt));
+					//tempWeapon = new ItemSystemWeapon(); //these two lines would do essentially the same thing as the one above.
+					//tempWeapon.Clone(database.Get(cnt)); //for a more "robust" method, search for deep copy vs shallow copy for c#
 					showNewWeaponDetails = true;
 					state = DisplayState.DETAILS;
 				}

@@ -22,7 +22,7 @@ namespace BurgZergArcade.ItemSystem.Editor
 			GUILayout.BeginVertical(GUILayout.ExpandWidth(true), GUILayout.ExpandHeight(true));
 			//GUILayout.Label("Detail View");
 			
-			EditorGUILayout.LabelField("State: " + state);
+			//EditorGUILayout.LabelField("State: " + state);
 			switch(state)
 			{
 				case DisplayState.DETAILS:
@@ -100,6 +100,19 @@ namespace BurgZergArcade.ItemSystem.Editor
 					tempWeapon = null;
 					_selectedIndex = -1;
 					state = DisplayState.NONE;
+				}
+				
+				if(_selectedIndex != -1) //display state will be DisplayState.DETAILS only when editing a current object
+				{
+					if(GUILayout.Button("Delete"))
+					{
+						database.Remove(_selectedIndex);
+						
+						showNewWeaponDetails = false;
+						tempWeapon = null;
+						_selectedIndex = -1;
+						state = DisplayState.NONE;
+					}
 				}
 				
 				if(GUILayout.Button("Cancel"))

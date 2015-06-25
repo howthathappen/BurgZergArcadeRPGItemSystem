@@ -12,6 +12,18 @@ namespace BurgZergArcade.ItemSystem
 		[SerializeField]private int _value;
 		[SerializeField]private int _burden;
 		[SerializeField]private ItemSystemQuality _quality;
+		
+		public ItemSystemObject (ItemSystemObject item)
+		{
+			Clone(item);
+		}
+		
+		public void Clone (ItemSystemObject item)
+		{
+			_value = item.Value;
+			_burden = item.Burden;
+			_quality = item.Quality;
+		}
 	
 		public string Name 
 		{
