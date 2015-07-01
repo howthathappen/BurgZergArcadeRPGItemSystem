@@ -8,7 +8,7 @@ namespace BurgZergArcade
 {
 	public class ScriptableObjectDatabase<T> : ScriptableObject where T: class //pass in a class as a variable, T.
 	{
-		[SerializeField] List<T> database = new List<T>();
+		[SerializeField] protected List<T> database = new List<T>(); //protected allows any class that directly inherits from this class to use this variable.
 		
 		public void Add (T item)
 		{

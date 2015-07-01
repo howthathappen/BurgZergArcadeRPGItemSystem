@@ -8,6 +8,11 @@ namespace BurgZergArcade.ItemSystem
 {
 	public class ItemSystemQualityDatabase : ScriptableObjectDatabase<ItemSystemQuality>
 	{
+		public int GetIndex (string name)
+		{
+			return database.FindIndex(a => a.Name == name);
+		}
+		
 //		[SerializeField][HideInInspector] //show our database list in the inspector or not. Also allows the database to be saved after closing unity it seems
 //		List<ItemSystemQuality> database = new List<ItemSystemQuality>();
 //	

@@ -129,7 +129,25 @@ namespace BurgZergArcade.ItemSystem
 		public void DisplayQuality ()
 		{
 			//GUILayout.Label("Quality");
-			qualitySelectedIndex = EditorGUILayout.Popup("Quality", qualitySelectedIndex, options);
+			//if(_quality == null)
+				//return;
+				
+			//Debug.Log("Quality Index: " + qdb.GetIndex(_quality.Name));
+			
+			int itemIndex = 0;
+			
+			//Debug.Log(qdb.GetIndex(_quality.Name).ToString());
+			if(_quality != null)
+			{
+				itemIndex = qdb.GetIndex(_quality.Name);
+			}
+			
+			if(itemIndex == -1) //-1 means it doesn't already have a quality assigned.
+			{
+				itemIndex = 0;
+			}
+			
+			qualitySelectedIndex = EditorGUILayout.Popup("Quality", itemIndex, options);
 			_quality = qdb.Get(SelectedQualityID);
 		}
 	}

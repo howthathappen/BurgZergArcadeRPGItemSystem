@@ -86,10 +86,22 @@ MonoBehaviour:
     equipmentSlot: 0
   - _name: k
     _icon: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+    _value: 1
+    _burden: 2
+    _quality:
+      _name: 3
+      _icon: {fileID: 0}
+    _minDamage: 4
+    _durability: 5
+    _maxDurability: 6
+    _prefab: {fileID: 130818, guid: 6d85cb865e948e344bca3373caec9bde, type: 2}
+    equipmentSlot: 4
+  - _name: Fan
+    _icon: {fileID: 0}
     _value: 0
     _burden: 0
     _quality:
-      _name: 1
+      _name: 2
       _icon: {fileID: 0}
     _minDamage: 0
     _durability: 0
