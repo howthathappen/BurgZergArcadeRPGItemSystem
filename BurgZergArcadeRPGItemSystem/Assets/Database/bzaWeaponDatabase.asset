@@ -103,8 +103,8 @@ MonoBehaviour:
     _quality:
       _name: 2
       _icon: {fileID: 0}
-    _minDamage: 0
-    _durability: 0
+    _minDamage: 2
+    _durability: 25
     _maxDurability: 0
     _prefab: {fileID: 0}
     equipmentSlot: 0
