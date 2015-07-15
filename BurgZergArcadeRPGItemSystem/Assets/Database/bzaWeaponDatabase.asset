@@ -34,7 +34,7 @@ MonoBehaviour:
     _minDamage: 0
     _durability: 0
     _maxDurability: 0
-    _prefab: {fileID: 0}
+    _prefab: {fileID: 130818, guid: 6d85cb865e948e344bca3373caec9bde, type: 2}
     equipmentSlot: 0
   - _name: l
     _icon: {fileID: 0}
@@ -46,7 +46,7 @@ MonoBehaviour:
     _minDamage: 0
     _durability: 0
     _maxDurability: 0
-    _prefab: {fileID: 0}
+    _prefab: {fileID: 130818, guid: 6d85cb865e948e344bca3373caec9bde, type: 2}
     equipmentSlot: 0
   - _name: LongSword
     _icon: {fileID: 0}
@@ -58,7 +58,7 @@ MonoBehaviour:
     _minDamage: 0
     _durability: 0
     _maxDurability: 0
-    _prefab: {fileID: 0}
+    _prefab: {fileID: 130818, guid: 6d85cb865e948e344bca3373caec9bde, type: 2}
     equipmentSlot: 0
   - _name: club
     _icon: {fileID: 0}
@@ -70,7 +70,7 @@ MonoBehaviour:
     _minDamage: 0
     _durability: 0
     _maxDurability: 0
-    _prefab: {fileID: 0}
+    _prefab: {fileID: 130818, guid: 6d85cb865e948e344bca3373caec9bde, type: 2}
     equipmentSlot: 0
   - _name: sword3
     _icon: {fileID: 0}
@@ -82,7 +82,7 @@ MonoBehaviour:
     _minDamage: 0
     _durability: 0
     _maxDurability: 0
-    _prefab: {fileID: 0}
+    _prefab: {fileID: 130818, guid: 6d85cb865e948e344bca3373caec9bde, type: 2}
     equipmentSlot: 0
   - _name: k
     _icon: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
@@ -106,5 +106,5 @@ MonoBehaviour:
     _minDamage: 2
     _durability: 25
     _maxDurability: 0
-    _prefab: {fileID: 0}
+    _prefab: {fileID: 130818, guid: 6d85cb865e948e344bca3373caec9bde, type: 2}
     equipmentSlot: 0
