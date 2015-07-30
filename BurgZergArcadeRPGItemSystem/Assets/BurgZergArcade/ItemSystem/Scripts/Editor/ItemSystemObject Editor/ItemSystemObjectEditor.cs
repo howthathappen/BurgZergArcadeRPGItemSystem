@@ -30,6 +30,8 @@ namespace BurgZergArcade.ItemSystem.Editor
 			{
 				database = ItemSystemWeaponDatabase.GetDatabase<ItemSystemWeaponDatabase>(DATABASE_PATH, DATABASE_NAME);
 			}
+			
+			tabState = TabState.WEAPON;
 		}
 		
 		private void OnGUI ()
@@ -37,8 +39,24 @@ namespace BurgZergArcade.ItemSystem.Editor
 			TopTabBar();
 			
 			GUILayout.BeginHorizontal();
-			ListView();
-			ItemDetails();
+			//GUILayout.Label("State: " + tabState);
+			
+			switch(tabState) {
+			case TabState.WEAPON:
+				ListView();
+				ItemDetails();
+				break;
+			case TabState.ARMOR:
+				GUILayout.Label("Armor");
+				break;
+			case TabState.POTION:
+				GUILayout.Label("Potion");
+				break;
+			default:
+				GUILayout.Label("Default State - About");
+				break;
+			}
+			
 			GUILayout.EndHorizontal();
 			
 			BottomStatusBar();
