@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
 
 namespace BurgZergArcade.ItemSystem
 {
@@ -12,6 +14,8 @@ namespace BurgZergArcade.ItemSystem
 		[SerializeField]private int _value;
 		[SerializeField]private int _burden;
 		[SerializeField]private ItemSystemQuality _quality;
+		
+		public ItemSystemObject () {}
 		
 		public ItemSystemObject (ItemSystemObject item)
 		{
@@ -86,11 +90,13 @@ namespace BurgZergArcade.ItemSystem
 				_quality = value;
 			}
 		}
-		
+	
+#if UNITY_EDITOR	
 		//this code will be placed in a new class later on.
 		private ItemSystemQualityDatabase qdb;
 		private int qualitySelectedIndex = 0;
 		private string[] options;// = new string[] {"com", "unc", "rar"};
+		private bool qualityDatabaseLoaded = false;
 		
 		public virtual void OnGUI ()
 		{
@@ -116,7 +122,7 @@ namespace BurgZergArcade.ItemSystem
 			get {return qualitySelectedIndex;}
 		}
 		
-		public ItemSystemObject ()
+		public void LoadQualityDatabase ()
 		{
 			string DATABASE_NAME = @"bzaQualityDatabase.asset";
 			string DATABASE_PATH = @"Database";
@@ -127,6 +133,8 @@ namespace BurgZergArcade.ItemSystem
 			{
 				options[cnt] = qdb.Get(cnt).Name;
 			}
+			
+			qualityDatabaseLoaded = true;
 		}
 		
 		public void DisplayQuality ()
@@ -136,6 +144,11 @@ namespace BurgZergArcade.ItemSystem
 				//return;
 				
 			//Debug.Log("Quality Index: " + qdb.GetIndex(_quality.Name));
+			if(!qualityDatabaseLoaded)
+			{
+				LoadQualityDatabase();
+				return; //reduces chance of errors if the database dooes not load fast enough. Basically does the code below one frame after this code is executed.
+			}
 			
 			int itemIndex = 0;
 			
@@ -153,5 +166,6 @@ namespace BurgZergArcade.ItemSystem
 			qualitySelectedIndex = EditorGUILayout.Popup("Quality", itemIndex, options);
 			_quality = qdb.Get(SelectedQualityID);
 		}
+#endif
 	}
 }

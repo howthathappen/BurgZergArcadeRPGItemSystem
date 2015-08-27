@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
 
 namespace BurgZergArcade.ItemSystem
 {
@@ -116,7 +118,7 @@ namespace BurgZergArcade.ItemSystem
 		}
 		
 		//this code will go into a new script later
-		
+#if UNITY_EDITOR		
 		public override void OnGUI ()//this OnGUI method overrides whatever OnGUI method we have in the base class
 		{
 			//Name = EditorGUILayout.TextField("Name: ", Name);
@@ -144,5 +146,6 @@ namespace BurgZergArcade.ItemSystem
 			_prefab = EditorGUILayout.ObjectField("Prefab", _prefab, typeof(GameObject), false) as GameObject;
 			//GUILayout.Label("Prefab");
 		}
+#endif
 	}
 }
